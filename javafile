@@ -1,0 +1,30 @@
+package testcases;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+
+
+public class TestFindingElements {
+
+	public static void main(String[] args) {
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.google.com/gmail/");
+		
+		/*WebElement username = driver.findElement(By.xpath("//*[@id='identifierId']"));
+		username.sendKeys("raganavya29@gmail.com");
+		
+		WebElement nextBtn = driver.findElement(By.xpath("//*[@id=\"identifierNext\"]/content/span"));
+		nextBtn.click();*/
+		
+		driver.findElement(By.xpath("//*[@id='identifierId']")).sendKeys("raganavya29@gmail.com");
+		driver.findElement(By.xpath("//*[@id=\"identifierNext\"]/content/span")).click();
+		
+		
+	}
+	
